@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% moderncv themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% adjust the page margins
+\usepackage{lmodern}
+\usepackage[scale=0.75]{geometry}
+
+% personal data
+\name{Bruce (Shidi)}{Xi}
+\address{303-4240 Cambie St, Vancouver, BC, V5Z 0K6}
+\phone[mobile]{(236)-777-8218}
+\email{brucexi99@outlook.com}
+\social[linkedin]{bruce-shidi-xi}
+\social[github]{brucexi999}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Education}
+\cventry{2021--2024}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{}{
+    \begin{itemize}
+    \item Research project: Multi-agent Deep Reinforcement Learning for VLSI Routing 
+    \item Relevant courses: Deep Learning, Computer Architecture, CNN Hardware Accelerator
+\end{itemize}
+}  % arguments 3 to 6 can be left empty
+\cventry{2018--2021}{Bachelor of Engineering in Material Science and Engineering}{Imperial College London}{London, UK}{}{
+    \begin{itemize}
+        \item Graduated with First-Class Honours
+        \item Obtained Dean's List for three consecutive years (2018-2021)
+    \end{itemize}
+}
+
+\section{Projects}
+
+\cventry
+{\textnormal{\textbf{May-Oct. 2023}}}
+{\textnormal{\textbf{Multi-agent Deep Reinforcement Learning for VLSI Routing}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Independently mastered DRL and VLSI global routing through extensive self-study and literature review
+    \item Successfully modelled and implemented the physical routing problem in Python
+    \item Innovatively designed a multi-agent DRL model to solve the routing problem using sophisticated Python toolkit
+\end{itemize}
+}
+
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2023}}}
+{\textnormal{\textbf{Embedded System Design}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Designed serval components of an embedded system including a 4-way set-associative cache controller and a DRAM controller using Verilog
+    \item Implemented the system on an FPGA with a provided soft microcontroller 
+    \item Wrote software and firmware in C that interacted with hardware using SPI, IIC, and CAN protocol 
+    \item Utilized hardware timer interrupt and designed a snake game software that run on the embedded system
+    %\item Project repository and demonstration videos can be found on GitHub (repo name: UBC-CPEN-412)
+\end{itemize}
+}
+
+\section{Experience}
+\cventry{May-Dec. 2022}{Design Validation Co-op}{Motorola Solutions}{Vancouver, BC}{}{General description no longer than 1--2 lines.\newline{}%
+Detailed achievements:
+\begin{itemize}%
+\item Achievement 1;
+\item Achievement 2, with sub-achievements:
+  \begin{itemize}%
+  \item Sub-achievement (a);
+  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+    \begin{itemize}
+    \item Sub-sub-achievement i;
+    \item Sub-sub-achievement ii;
+    \item Sub-sub-achievement iii;
+    \end{itemize}
+  \item Sub-achievement (c);
+  \end{itemize}
+\item Achievement 3.
+\end{itemize}}
+
+% ... add more sections and subsections as needed ...
+\end{document}
