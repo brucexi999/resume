@@ -6,7 +6,7 @@
 
 % adjust the page margins
 \usepackage{lmodern}
-\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage[scale=0.8, top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
 
 % personal data
 \name{Bruce}{Xi}
@@ -23,9 +23,9 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2021--2025}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
+\cventry{2021--Present}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Deep Learning, ML Hardware Accelerator, Computer Architecture, Digital Hardware Design, Embedded System, VLSI, IC Testing and Reliability
+    \item Relevant courses: Deep Learning, Reinforcement Learning, ML Hardware Accelerator, Computer Architecture, Digital/Microcomputer System Design, VLSI, IC Testing and Reliability
 \end{itemize}
 }
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{}{
@@ -39,9 +39,9 @@
 \cventry{May-Dec. 2022}{Design Validation Co-op}{Motorola Solutions}{Vancouver, BC}{}
 {
     \begin{itemize}
-    \item Conducted extensive camera tests in various settings, ensuring accuracy and precision
+    \item Conducted extensive surveillance camera tests in various settings, validating the cameras' electrical, mechanical, and optical performance
     \item Engineered Python-based software for test automation and data analysis, enhancing test efficiency with up to 90\% automation
-    \item Utilized FFmpeg for video processing
+    \item Utilized FFmpeg for video processing and analysis
     \item Collaborated within a team using Git, Confluence, and Jira to optimize workflow efficiency
     \end{itemize}
 }
@@ -55,52 +55,52 @@ Deep Reinforcement Learning}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Developed a novel machine learning framework to address the VLSI global routing problem in a concurrent manner, integrating multi-agent reinforcement learning with deep neural networks
+        \item Developed a Python-based machine learning framework to address the VLSI global routing problem in a concurrent manner. This framework modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch)
         \item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, leading to significant performance improvements
         \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
         \end{itemize}
 }
 
 \cventry
-{\textnormal{\textbf{Jan.-Apr. 2023}}}
-{\textnormal{\textbf{Embedded System Development}}}
+{\textnormal{\textbf{Sept.-Dec. 2023}}}
+{\textnormal{\textbf{Computer Architecture Simulator}}}
 {}{}{}
 {
     \begin{itemize}
-    \item Engineered key components of an embedded system including a 4-way set-associative cache controller and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\%
-    \item Implemented the system on an FPGA with a provided soft microcontroller 
-    \item Developed software and firmware in C that interacted with hardware using SPI, IIC, and CAN protocol 
-    \item Utilized hardware timer interrupt and designed a snake game software that ran on the embedded system
+        \item Developed four cache replacement policies in C++ for the ChampSim simulator, achieving Instruction Per Cycle (IPC) and hit rates comparable to the Least Recently Used (LRU) policy
+        \item Transformed the simulator's pipelined CPU into a non-pipelined structure by comprehensively analyzing and modifying the existing C++ code
+        \item Implemented two branch prediction algorithms in C++, resulting in IPC and accuracies on par with a established baseline
+    \end{itemize}
+}
+
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2023}}}
+{\textnormal{\textbf{Microcomputer System Development}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Engineered key components of an microcomputer system including a 4-way set-associative cache and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\%
+    \item Implemented the system on an Altera FPGA with a soft core provided by the course 
+    \item Developed software and firmware in C that interacted with hardware (Flash, EEPROM, and ADC/DAC) using SPI, IIC, and CAN protocol 
+    \item Utilized hardware timer interrupt and designed a snake game software that ran on the system and interact with the player using VGA
     \end{itemize}
 }
 
 \cventry
 {\textnormal{\textbf{June-Sept. 2022}}}
-{\textnormal{\textbf{CPU Architecture Design}}}
+{\textnormal{\textbf{CPU Design and Assembly programming}}}
 {}{}{}
 {
     \begin{itemize}
-    \item Architected a 16-bit RISC CPU from the ground up using Verilog, integrating pivotal components such as FSM, datapath, RAM, and I/O interfaces
+    \item Architected a 16-bit RISC CPU from the ground up using Verilog, integrating pivotal components such as FSM, datapath, RAM, and I/O interfaces. The CPU was implemented on an Altera FPGA
     \item The CPU supported 13 diverse instructions encompassing ALU operations, memory access, and branching mechanisms
-    \item Successfully deployed the system onto an FPGA and validated the design's capabilities by executing a test program
+    \item Implemented preemptive multitasking on a ARM core integrated on the FPGA using Assembly
 \end{itemize}
-}
-
-\cventry
-{\textnormal{\textbf{Jan.-Apr. 2022}}}
-{\textnormal{\textbf{System-on-Chip Design}}}
-{}{}{}
-{
-    \begin{itemize}
-    \item Designed an SoC which was implemented on an FPGA using Quartus IP Catalog, the system consisted of a soft CPU, an on-chip memory, a memory-mapped interconnect, and I/Os
-    \item Designed custom hardware using Verilog that adhered to the interconnect's communication protocol 
-    \item Scripted C programs to interact with the system
-    \end{itemize}
 }
 
 \section{Skills}
 \cvitem{Hardware}{Verilog, FPGA, ModelSim, Quartus, Cadence}
-\cvitem{Software}{Python, C, ARM Assembly, Linux}
+\cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux}
 \cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
 
 % ... add more sections and subsections as needed ...
