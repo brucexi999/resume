@@ -25,12 +25,12 @@
 \section{Education}
 \cventry{2021--Present}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Deep Learning, Reinforcement Learning, ML Hardware Accelerator, Computer Architecture, Digital/Microcomputer System Design, VLSI, IC Testing and Reliability
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, IC Testing and Reliability, DNN Accelerator, Machine Learning
 \end{itemize}
 }
-\cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{}{
+\cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
     \begin{itemize}
-        \item Graduated with First-Class Honours
+    %    \item Graduated with First-Class Honours
         \item Obtained Dean's List for three consecutive years (2018-2021)
     \end{itemize}
 }
@@ -39,39 +39,50 @@
 \cventry{May-Dec. 2022}{Design Validation Co-op}{Motorola Solutions}{Vancouver, BC}{}
 {
     \begin{itemize}
-    \item Conducted extensive surveillance camera tests in various settings, validating the cameras' electrical, mechanical, and optical performance
+    \item Conducted extensive surveillance camera tests, validating the cameras' electrical, mechanical, and optical performance
     \item Engineered Python-based software for test automation and data analysis, enhancing test efficiency with up to 90\% automation
     \item Utilized FFmpeg for video processing and analysis
-    \item Collaborated within a team using Git, Confluence, and Jira to optimize workflow efficiency
+    \item Collaborated within a team using Git, GitHub, Confluence, and Jira to optimize workflow efficiency
     \end{itemize}
 }
 
 \section{Project}
 
 \cventry
-{\textnormal{\textbf{May-Oct. 2023}}}
-{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
-Deep Reinforcement Learning}}}
+{\textnormal{\textbf{Feb. 2024}}}
+{\textnormal{\textbf{AXI Stream Header Insertion}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Developed a Python-based machine learning framework to address the VLSI global routing problem in a concurrent manner. This framework modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch)
-        \item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, leading to significant performance improvements
-        \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
-        \end{itemize}
+        \item Designed a Verilog RTL module for inserting headers into network packets, adhering to the AXI Stream protocol. The module receives headers and data packets from two master interfaces and sends them to one slave after processing and arbitration
+        \item Implemented pipelining for both data and handshake signals, incorporating skid buffers to eliminate bubbles and efficiently manage backpressure
+    \end{itemize}
 }
 
+
 %\cventry
-%{\textnormal{\textbf{Sept.-Dec. 2023}}}
-%{\textnormal{\textbf{Computer Architecture Simulator}}}
+%{\textnormal{\textbf{May-Oct. 2023}}}
+%{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
+%Deep Reinforcement Learning}}}
 %{}{}{}
 %{
-%    \begin{itemize}
-%        \item Leveraged tiling and loop reordering to optimize matrix multiplication in C. These techniques changed memory access patterns and improved cache hit rate by 8x
-%        \item Developed four cache replacement policies in C++ for the ChampSim simulator, achieving Instruction Per Cycle (IPC) and hit rates comparable to the Least Recently Used (LRU) policy
-%        \item Implemented two branch prediction algorithms in C++, resulting in IPC and accuracies on par with an established baseline
-%    \end{itemize}
+    %\begin{itemize}
+        %\item Developed a Python-based machine learning framework to address the VLSI global routing problem in a concurrent manner. This framework modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch)
+        %\item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, leading to significant performance improvements
+        %\item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
+%        \end{itemize}
 %}
+
+\cventry
+{\textnormal{\textbf{Sept.-Dec. 2023}}}
+{\textnormal{\textbf{Computer Architecture Simulator}}}
+{}{}{}
+{
+    \begin{itemize}
+        \item Optimized matrix multiplication in C by leveraging tiling and loop reordering techniques, altering memory access patterns and increasing cache hit rate by a factor of 8
+        \item Developed four cache replacement policies and two branch prediction algorithms in C++ in the ChampSim simulator
+    \end{itemize}
+}
 
 \cventry
 {\textnormal{\textbf{Jan.-Apr. 2023}}}
@@ -86,18 +97,18 @@ Deep Reinforcement Learning}}}
     \end{itemize}
 }
 
-\cventry
-{\textnormal{\textbf{Sept.-Dec. 2022}}}
-{\textnormal{\textbf{VLSI Physical Design}}}
-{}{}{}
-{
-    \begin{itemize}
-    \item Designed the physical layout of a 3-input NAND gate using Cadence Virtuoso, the layout was DRC error free and optimized for timing and area
-    \item Synthesized an RTL FSM using Cadence Encounter RTL Compiler
-    \item Placed and routed the post-synthesis netlist using Cadence Innovus
-    \item Simulated the circuit after placement and routing using Cadence Virtuoso 
-\end{itemize}
-}
+%\cventry
+%{\textnormal{\textbf{Sept.-Dec. 2022}}}
+%{\textnormal{\textbf{VLSI Physical Design}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+    %\item Designed the physical layout of a 3-input NAND gate using Cadence Virtuoso, the layout was DRC error free and optimized for timing and area
+    %\item Synthesized an RTL FSM using Cadence Encounter RTL Compiler
+    %\item Placed and routed the post-synthesis netlist using Cadence Innovus
+    %\item Simulated the circuit after placement and routing using Cadence Virtuoso 
+%\end{itemize}
+%}
 
 \cventry
 {\textnormal{\textbf{June-Sept. 2022}}}
@@ -107,14 +118,26 @@ Deep Reinforcement Learning}}}
     \begin{itemize}
     \item Architected a 16-bit RISC CPU from the ground up using Verilog, integrating pivotal components such as FSM, datapath, RAM, and I/O interfaces. The CPU was implemented on an Altera FPGA
     \item The CPU supported 13 diverse instructions encompassing ALU operations, memory access, and branching mechanisms
-    \item Implemented preemptive multitasking on an ARM core integrated on the FPGA using Assembly
+    \item Implemented preemptive multitasking on an ARM core integrated on the FPGA using ARM Assembly
 \end{itemize}
+}
+
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2022}}}
+{\textnormal{\textbf{FPGA SoC Design}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via an Avalon memory-mapped interface
+    \item Designed and synthesized custom IP cores in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output
+    \item Created embedded software in C to perform system tasks such as performance benchmarking and control over VGA display
+    \end{itemize}
 }
 
 \section{Skills}
 \cvitem{Hardware}{Verilog, FPGA, ModelSim, Quartus, Cadence}
 \cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux}
-\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
-
+%\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
+\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
 % ... add more sections and subsections as needed ...
 \end{document}
