@@ -6,7 +6,7 @@
 
 % adjust the page margins
 \usepackage{lmodern}
-\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage[scale=0.8, top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
 
 % personal data
 \name{Bruce (Shidi)}{Xi}
@@ -24,9 +24,7 @@
 \section{Education}
 \cventry{2021--2024}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{}{
     \begin{itemize}
-    \item Research project: Concurrent VLSI Routing with Multi-agent
-    Deep Reinforcement Learning
-    \item Relevant courses: Deep Learning, ML Hardware Accelerator, Computer Architectures, Digital Hardware Design, Embedded Systems, VLSI, IC Testing and Reliability
+    \item Relevant courses: Deep Learning, DNN Hardware Accelerator, Computer Architectures, Digital/Microcomputer System Design, VLSI, IC Testing and Reliability
 \end{itemize}
 }  % arguments 3 to 6 can be left empty
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{}{
@@ -45,9 +43,9 @@ Deep Reinforcement Learning}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Independently mastered reinforcement learning and VLSI global routing through exhaustive self-study and comprehensive literature review
+        \item Independently mastered reinforcement learning and VLSI global routing through  self-study and literature review
         \item Developed a novel machine learning framework to address the VLSI global routing problem in a concurrent manner, integrating multi-agent reinforcement learning with deep neural networks
-        \item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, leading to significant performance improvements
+        \item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, improving performances
         \item Actively contributed to research group meetings by sharing project insights and progress, effectively communicating complex technical details to supervisors and peers
         \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
         \end{itemize}
@@ -55,16 +53,27 @@ Deep Reinforcement Learning}}}
 
 \cventry
 {\textnormal{\textbf{Jan.-Apr. 2023}}}
-{\textnormal{\textbf{Embedded System Design}}}
+{\textnormal{\textbf{Microcomputer System Development}}}
 {}{}{}
 {
     \begin{itemize}
-    \item Designed key components of an embedded system including a 4-way set-associative cache controller and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\%
-    \item Implemented the system on an FPGA with a provided soft microcontroller 
-    \item Developed software and firmware in C that interacted with hardware using SPI, IIC, and CAN protocol 
-    \item Utilized hardware timer interrupt and designed a snake game software that ran on the embedded system
-    %\item Project repository and demonstration videos can be found on GitHub (repo name: UBC-CPEN-412)
-\end{itemize}
+    \item Engineered key components of a microcomputer system including a 4-way set-associative cache and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\%
+    \item Implemented the system on an Altera FPGA with a soft core provided by the course 
+    \item Developed software in C that interacted with hardware (Flash, EEPROM, and ADC/DAC) using SPI, IIC, and CAN protocol 
+    \item Utilized hardware timer interrupt and designed a snake game software that ran on the system and interact with the player using VGA
+    \end{itemize}
+}
+
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2022}}}
+{\textnormal{\textbf{FPGA SoC Design}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via an Avalon memory-mapped interface
+    \item Designed and synthesized custom IP cores in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output
+    \item Created embedded software in C to perform system tasks such as performance benchmarking and control over VGA display
+    \end{itemize}
 }
 
 %\cventry
@@ -98,8 +107,8 @@ Deep Reinforcement Learning}}}
 
 \section{Skills}
 \cvitem{Hardware}{Verilog, FPGA, Modelsim, Quartus, Cadence}
-\cvitem{Software}{Python, C, ARM Assembly, Linux, Git, GitHub}
-\cvitem{Research}{LaTeX, Academic and Technical Writing, Mendeley}
+\cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux}
+\cvitem{Research}{LaTeX, Academic writing, Mendeley}
 \cvitem{}{}
 
 % ... add more sections and subsections as needed ...
