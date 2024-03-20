@@ -25,7 +25,7 @@
 \section{Education}
 \cventry{2021--Present}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, IC Testing and Reliability, DNN Accelerator, Machine Learning
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, IC Testing and Reliability, DNN Accelerator, Deep Learning
 \end{itemize}
 }
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
@@ -49,40 +49,40 @@
 \section{Project}
 
 \cventry
-{\textnormal{\textbf{Feb. 2024}}}
-{\textnormal{\textbf{AXI Stream Header Insertion}}}
+{\textnormal{\textbf{Feb.-Mar. 2024}}}
+{\textnormal{\textbf{AMBA AXI Stream Header Insertion}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Designed a Verilog RTL module for inserting headers into network packets, adhering to the AXI Stream protocol. The module receives headers and data packets from two master interfaces and sends them to one slave after processing and arbitration
+        \item Designed a Verilog RTL module for inserting headers into network packets, adhering to the AXI Stream protocol. The module receives headers and data packets from two master interfaces and sends them to one slave after packing and merging
         \item Implemented pipelining for both data and handshake signals, incorporating skid buffers to eliminate bubbles and efficiently manage backpressure
     \end{itemize}
 }
 
 
-%\cventry
-%{\textnormal{\textbf{May-Oct. 2023}}}
-%{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
-%Deep Reinforcement Learning}}}
-%{}{}{}
-%{
-    %\begin{itemize}
-        %\item Developed a Python-based machine learning framework to address the VLSI global routing problem in a concurrent manner. This framework modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch)
-        %\item Addressed training challenges by fine-tuning hyperparameters through a grid search approach, leading to significant performance improvements
-        %\item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
-%        \end{itemize}
-%}
-
 \cventry
-{\textnormal{\textbf{Sept.-Dec. 2023}}}
-{\textnormal{\textbf{Computer Architecture Simulator}}}
+{\textnormal{\textbf{May-Oct. 2023}}}
+{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
+Deep Reinforcement Learning}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Optimized matrix multiplication in C by leveraging tiling and loop reordering techniques, altering memory access patterns and increasing cache hit rate by a factor of 8
-        \item Developed four cache replacement policies and two branch prediction algorithms in C++ in the ChampSim simulator
-    \end{itemize}
+        \item Developed a Python-based machine learning framework to address the VLSI global routing problem in a concurrent manner. This framework modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch)
+        \item Addressed training challenges by fine-tuning hyperparameters using grid search, leading to significant performance improvements
+        \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength
+        \end{itemize}
 }
+
+%\cventry
+%{\textnormal{\textbf{Sept.-Dec. 2023}}}
+%{\textnormal{\textbf{Computer Architecture %Simulator}}}
+%{}{}{}
+%{
+%    \begin{itemize}
+%        \item Optimized matrix multiplication in C by leveraging tiling and loop reordering techniques, altering memory access patterns and increasing cache hit rate by a factor of 8
+%        \item Developed four cache replacement policies and two branch prediction algorithms in C++ in the ChampSim simulator
+%    \end{itemize}
+%}
 
 \cventry
 {\textnormal{\textbf{Jan.-Apr. 2023}}}
@@ -90,10 +90,9 @@
 {}{}{}
 {
     \begin{itemize}
-    \item Engineered key components of a microcomputer system including a 4-way set-associative cache and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\%
-    \item Implemented the system on an Altera FPGA with a soft core provided by the course 
-    \item Developed software and firmware in C that interacted with hardware (Flash, EEPROM, and ADC/DAC) using SPI, IIC, and CAN protocol 
-    \item Utilized hardware timer interrupt and designed a snake game software that ran on the system and interact with the player using VGA
+    \item Engineered key components of a microcomputer system including a 4-way set-associative cache and a DRAM controller using Verilog. The cache reduced the runtime of a benchmark by 43\% 
+    \item Developed software in C that controlled a soft Motorola 68000 CPU to communicate with peripheral hardware (Flash, EEPROM, and ADC/DAC) using SPI, IIC, and CAN protocol 
+    \item Utilized hardware timer interrupt and designed a snake game in C that ran on the system and interact with the player using VGA
     \end{itemize}
 }
 
@@ -128,16 +127,16 @@
 {}{}{}
 {
     \begin{itemize}
-    \item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via an Avalon memory-mapped interface
+    \item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via Avalon memory-mapped interface
     \item Designed and synthesized custom IP cores in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output
-    \item Created embedded software in C to perform system tasks such as performance benchmarking and control over VGA display
+    \item Created software in C to perform system tasks such as performance benchmarking and control over VGA display
     \end{itemize}
 }
 
 \section{Skills}
-\cvitem{Hardware}{Verilog, FPGA, ModelSim, Quartus, Cadence}
-\cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux}
+\cvitem{Hardware}{Verilog, SystemVerilog, FPGA, ModelSim, Quartus, Cadence}
+\cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux, MATLAB}
 %\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
-\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
+%\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
 % ... add more sections and subsections as needed ...
 \end{document}
