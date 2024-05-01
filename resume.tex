@@ -49,6 +49,20 @@
 \section{Project}
 
 \cventry
+{Jan.-May 2024}
+{Design, Simulation, and Analysis of a 10 Gbps Differential SerDes Data Link}
+{}{}{}
+{
+    \begin{itemize}
+        \item Designed a 10 Gbps differential SerDes data link using Cadence Virtuoso in 45 nm technology, incorporating a TX, a differential channel, and an RX. Performed circuit simulations using Spectre, achieving a power consumption of 9 mW, an eye-opening of 47 mV under the worst-case data pattern, and zero errors with PRBS7 input over 10,000 UIs.
+        \item Characterized channel impulse and pulse responses using MATLAB, determining the worst-case data pattern and computing tap values for 2-tap FIR equalization.
+        \item Developed the TX with a 4:1 serializer based on a 5-latch-2:1 multiplexer topology with half-rate clocking, requiring 5 GHz clock frequency at max. The pre-drivers are designed as inverter chains optimized using logical effort. Implemented a high-swing, voltage-mode driver segmented into 10 parts to provide a tunable impedance of $50 \Omega \pm 30\%$ and configured to pre-emphasize the signal, functioning as an FIR filter.
+        \item Implemented the RX with 1:4 deserialization at 2.5 GHz using four slicers followed by synchronizers. Each slicer integrates a track-and-hold switch executed as a transmission gate, a StrongArm latch, and an SR latch.
+    \end{itemize}
+}
+
+
+\cventry
 {\textnormal{\textbf{Feb.-Mar. 2024}}}
 {\textnormal{\textbf{AMBA AXI Stream Header Insertion}}}
 {}{}{}
