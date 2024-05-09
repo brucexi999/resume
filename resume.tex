@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% moderncv themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% adjust the page margins
+\usepackage{lmodern}
+\usepackage[scale=0.8, top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+
+% personal data
+\name{Bruce}{Xi}
+\phone[mobile]{(236)-777-8218}
+\email{brucexi99@outlook.com}
+\social[linkedin]{bruce-shidi-xi}
+\social[github]{brucexi999}
+%\extrainfo{\textbf{Available from May 2024 - August 2025}}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+\vspace{-1.5cm} 
+
+\section{Education}
+\cventry{2021--Present}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
+    \begin{itemize}
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and Reliability, DNN Accelerator, Deep Learning
+\end{itemize}
+}
+\cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
+    \begin{itemize}
+    %    \item Graduated with First-Class Honours
+        \item Obtained Dean's List for three consecutive years (2018-2021)
+    \end{itemize}
+}
+
+\vspace{-0.5cm} 
+\section{Project}
+
+\cventry
+{\textnormal{\textbf{Feb.-Mar. 2024}}}
+{\textnormal{\textbf{AMBA AXI Stream Header Insertion}}}
+{}{}{}
+{
+    \begin{itemize}
+        \item Designed an RTL module using Verilog to insert headers into network data packets. This module transfers data following the AXI Stream protocol, accepting data and headers from two master interfaces. It removes invalid bytes from both input signals based on the keep signal (packing), merges the remaining valid bytes, sends them to a slave interface, and outputs the corresponding keep and last signals.
+        \item Used pipelining for data and handshake signals, and equipped skid buffers to handle backpressure, eliminate bubbles in the pipeline, and optimize throughput.
+        \item Verified the module using SystemVerilog random stimuli to ensure data correctness with no losses or duplications.
+    \end{itemize}
+}
+
+
+\cventry
+{\textnormal{\textbf{May-Oct. 2023}}}
+{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
+Deep Reinforcement Learning}}}
+{}{}{}
+{
+    \begin{itemize}
+        \item Developed a Python-based machine learning model to address the VLSI global routing problem in a concurrent manner. Modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch).
+        %\item Addressed training challenges by fine-tuning hyperparameters using grid search, leading to significant performance improvements
+        \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength.
+        \end{itemize}
+}
+
+%\cventry
+%{\textnormal{\textbf{Sept.-Dec. 2023}}}
+%{\textnormal{\textbf{Computer Architecture %Simulator}}}
+%{}{}{}
+%{
+%    \begin{itemize}
+%        \item Optimized matrix multiplication in C by leveraging tiling and loop reordering techniques, altering memory access patterns and increasing cache hit rate by a factor of 8
+%        \item Developed four cache replacement policies and two branch prediction algorithms in C++ in the ChampSim simulator
+%    \end{itemize}
+%}
+
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2023}}}
+{\textnormal{\textbf{Microcomputer System Development}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Developed critical components for a microcomputer system capable of operating at 45 MHz on an Altera FPGA. Implemented an 8-way set associative cache using SRAM on the FPGA, and designed a segment of the cache controller featuring a Tree PLRU replacement policy using Verilog. Also designed components of a DRAM controller using Verilog.
+    \item Wrote embedded C drivers to manage a soft Motorola 68000 microprocessor for communications via SPI protocol with a Flash, and via IIC protocol with a EEPROM and an ADC/DAC PCB.
+    \item Leveraged hardware timer interrupts to create a snake game in C, which was playable on the system and utilized VGA for user interaction.
+    \end{itemize}
+}
+
+%\cventry
+%{\textnormal{\textbf{Sept.-Dec. 2022}}}
+%{\textnormal{\textbf{VLSI Physical Design}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+    %\item Designed the physical layout of a 3-input NAND gate using Cadence Virtuoso, the layout was DRC error free and optimized for timing and area
+    %\item Synthesized an RTL FSM using Cadence Encounter RTL Compiler
+    %\item Placed and routed the post-synthesis netlist using Cadence Innovus
+    %\item Simulated the circuit after placement and routing using Spectre
+%\end{itemize}
+%}
+
+\cventry
+{\textnormal{\textbf{Jan.-May 2024}}}
+{\textnormal{\textbf{Design of a 10 Gbps Differential SerDes Data Link with TX FIR Equalization}}}
+{}{}{}
+{
+    \begin{itemize}
+        \item Designed a 10 Gbps differential SerDes data link using Cadence Virtuoso in 45 nm technology, incorporating a TX, a differential channel, and an RX. Performed circuit simulations using Spectre, achieving a power consumption of 9 mW, an eye-opening of 47 mV under the worst-case data pattern, and zero errors with both worst-case and PRBS7 input over 10,000 UIs.
+        \item Characterized channel impulse and pulse responses using MATLAB, determining the worst-case data pattern and computing tap values for 2-tap FIR equalization.
+        \item Developed the TX with a 4:1 serializer based on a 5-latch-2:1 multiplexer topology with half-rate clocking, requiring 5 GHz clock frequency at max. Pre-drivers are designed as inverter chains optimized using logical effort. Implemented a high-swing, voltage-mode driver segmented into 10 parts to provide a tunable impedance of $50 \Omega \pm 30\%$ and configured to pre-emphasize the signal, functioning as an FIR equalizer to suppress ISI.
+        \item Implemented the RX with 1:4 deserialization at 2.5 GHz using four slicers followed by synchronizers. Each slicer integrates a track-and-hold switch executed as a transmission gate, a StrongArm latch, and an SR latch.
+    \end{itemize}
+}
+
+
+%\cventry
+%{\textnormal{\textbf{June-Sept. 2022}}}
+%{\textnormal{\textbf{CPU Design and Assembly Programming}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+    %\item Designed a 16-bit RISC CPU from the ground up using Verilog and implemented on an Altera FPGA, integrating pivotal components such as a state machine, a datapath, on-chip memory, and I/O interfaces.
+    %\item The CPU supported 13 diverse instructions encompassing ALU operations, memory access, and branching mechanisms.
+    %\item Implemented preemptive multitasking on an ARM Cortex-A9 core embedded in the FPGA using ARM Assembly.
+%\end{itemize}
+%}
+
+%\cventry
+%\textnormal{\textbf{Jan.-Apr. 2022}}}
+%{\textnormal{\textbf{FPGA SoC Design}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+    %\item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via Avalon memory-mapped interface
+    %\item Designed and synthesized custom IP cores in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output
+    %\item Created software in C to perform system tasks such as performance benchmarking and control over VGA display
+    %\end{itemize}
+%}
+\vspace{-0.2cm} 
+
+\section{Work Experience}
+\cventry{May-Dec. 2022}{Design Validation Co-op}{Motorola Solutions}{Vancouver, BC}{}
+{
+    \begin{itemize}
+    \item Conducted extensive electrical, mechanical, and optical tests on surveillance cameras.
+    \item Proposed reflections and innovations on existing testing processes, self-taught Python programming, and wrote software for test automation and data analysis. Reduced repetitive manual labor within the team, improving work efficiency. Automation of some tests reached up to 90\%.
+    %\item Utilized FFmpeg for video processing and analysis
+    \item Collaborated within a team using Git, GitHub, Confluence, and Jira to optimize workflow efficiency.
+    \end{itemize}
+}
+\vspace{-0.3cm} 
+
+\section{Skills}
+\cvitem{Hardware}{Verilog, SystemVerilog, Altera FPGA, ModelSim, Quartus, Cadence Virtuoso} 
+\cvitem{Software}{Python $>$ C $>$ ARM Assembly = C++, Linux, MATLAB}
+%\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
+%\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
+% ... add more sections and subsections as needed ...
+\end{document}
