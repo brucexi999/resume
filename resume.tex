@@ -41,16 +41,27 @@
 
 \cventry
 {\textnormal{\textbf{Feb.-Mar. 2024}}}
-{\textnormal{\textbf{AMBA AXI Stream Header Insertion}}}
+{\textnormal{\textbf{AMBA AXI Stream Header Insertion Module Design and Verification}}}
 {}{}{}
 {
     \begin{itemize}
         \item Designed an RTL module using Verilog to insert headers into network data packets. This module transfers data following the AXI Stream protocol, accepting data and headers from two master interfaces. It removes invalid bytes from both input signals based on the keep signal (packing), merges the remaining valid bytes, sends them to a slave interface, and outputs the corresponding keep and last signals.
         \item Used pipelining for data and handshake signals, and equipped skid buffers to handle backpressure, eliminate bubbles in the pipeline, and optimize throughput.
-        \item Verified the module using SystemVerilog random stimuli to ensure data correctness with no losses or duplications.
+        \item Verified the module using constrained-random stimuli and SystemVerilog assertions to ensure data correctness.
     \end{itemize}
 }
 
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2023}}}
+{\textnormal{\textbf{Microcomputer System Development}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Developed critical components for a microcomputer system capable of operating at 45 MHz on an Altera FPGA. Implemented an 8-way set associative cache using SRAM on the FPGA, and designed a segment of the cache controller featuring a Tree PLRU replacement policy using Verilog. Also designed components of a DRAM controller using Verilog.
+    \item Wrote embedded C drivers to manage a soft Motorola 68000 microprocessor for communications via SPI protocol with a Flash, and via IIC protocol with a EEPROM and an ADC/DAC PCB.
+    \item Leveraged hardware timer interrupts to create a snake game in C, which was playable on the system and utilized VGA for user interaction.
+    \end{itemize}
+}
 
 \cventry
 {\textnormal{\textbf{May-Oct. 2023}}}
@@ -76,17 +87,7 @@ Deep Reinforcement Learning}}}
 %    \end{itemize}
 %}
 
-\cventry
-{\textnormal{\textbf{Jan.-Apr. 2023}}}
-{\textnormal{\textbf{Microcomputer System Development}}}
-{}{}{}
-{
-    \begin{itemize}
-    \item Developed critical components for a microcomputer system capable of operating at 45 MHz on an Altera FPGA. Implemented an 8-way set associative cache using SRAM on the FPGA, and designed a segment of the cache controller featuring a Tree PLRU replacement policy using Verilog. Also designed components of a DRAM controller using Verilog.
-    \item Wrote embedded C drivers to manage a soft Motorola 68000 microprocessor for communications via SPI protocol with a Flash, and via IIC protocol with a EEPROM and an ADC/DAC PCB.
-    \item Leveraged hardware timer interrupts to create a snake game in C, which was playable on the system and utilized VGA for user interaction.
-    \end{itemize}
-}
+
 
 %\cventry
 %{\textnormal{\textbf{Sept.-Dec. 2022}}}
@@ -146,6 +147,7 @@ Deep Reinforcement Learning}}}
     \begin{itemize}
     \item Conducted extensive electrical, mechanical, and optical tests on surveillance cameras.
     \item Proposed reflections and innovations on existing testing processes, self-taught Python programming, and wrote software for test automation and data analysis. Reduced repetitive manual labor within the team, improving work efficiency. Automation of some tests reached up to 90\%.
+    %\item The Python software used internal firmware APIs to control the camera to take pictures, reboot, get configured etc. 
     %\item Utilized FFmpeg for video processing and analysis
     \item Collaborated within a team using Git, GitHub, Confluence, and Jira to optimize workflow efficiency.
     \end{itemize}
