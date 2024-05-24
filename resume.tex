@@ -26,7 +26,7 @@
 \section{Education}
 \cventry{2021--Present}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and Reliability, DNN Accelerator, Deep Learning
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and DFT, DNN Accelerator, Deep Learning
 \end{itemize}
 }
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
@@ -63,18 +63,17 @@
     \end{itemize}
 }
 
-\cventry
-{\textnormal{\textbf{May-Oct. 2023}}}
-{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent
-Deep Reinforcement Learning}}}
-{}{}{}
-{
-    \begin{itemize}
-        \item Developed a Python-based machine learning model to address the VLSI global routing problem in a concurrent manner. Modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch).
+%\cventry
+%{\textnormal{\textbf{May-Oct. 2023}}}
+%{\textnormal{\textbf{Concurrent VLSI Routing with Multi-agent Deep Reinforcement Learning}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+        %\item Developed a Python-based machine learning model to address the VLSI global routing problem in a concurrent manner. Modeled routing as a pathfinding task and solved it using multi-agent reinforcement learning integrated with deep neural networks (MLP and GNN implemented in PyTorch).
         %\item Addressed training challenges by fine-tuning hyperparameters using grid search, leading to significant performance improvements
-        \item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength.
-        \end{itemize}
-}
+        %\item The proposed work overcame the traditional net-ordering issue, guaranteed zero overflow, and outperformed an A* baseline by 2.6\% in terms of wirelength.
+        %\end{itemize}
+%}
 
 %\cventry
 %{\textnormal{\textbf{Sept.-Dec. 2023}}}
@@ -95,10 +94,8 @@ Deep Reinforcement Learning}}}
 %{}{}{}
 %{
     %\begin{itemize}
-    %\item Designed the physical layout of a 3-input NAND gate using Cadence Virtuoso, the layout was DRC error free and optimized for timing and area
-    %\item Synthesized an RTL FSM using Cadence Encounter RTL Compiler
-    %\item Placed and routed the post-synthesis netlist using Cadence Innovus
-    %\item Simulated the circuit after placement and routing using Spectre
+    %\item Designed the physical layout of a 3-input NAND gate using Cadence Virtuoso, the layout was DRC error free and optimized for timing and area. Parasitic extraction was done for the purpose of timing analysis and circuit simulation.
+    %\item Synthesized an RTL state machine using Cadence Encounter RTL Compiler. Placed and routed the post-synthesis netlist using Cadence Innovus. Simulated the circuit after placement and routing using Spectre.
 %\end{itemize}
 %}
 
@@ -128,17 +125,17 @@ Deep Reinforcement Learning}}}
 %\end{itemize}
 %}
 
-%\cventry
-%\textnormal{\textbf{Jan.-Apr. 2022}}}
-%{\textnormal{\textbf{FPGA SoC Design}}}
-%{}{}{}
-%{
-    %\begin{itemize}
-    %\item Developed a comprehensive SoC on FPGA using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via Avalon memory-mapped interface
-    %\item Designed and synthesized custom IP cores in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output
-    %\item Created software in C to perform system tasks such as performance benchmarking and control over VGA display
-    %\end{itemize}
-%}
+\cventry
+{\textnormal{\textbf{Jan.-Apr. 2022}}}
+{\textnormal{\textbf{FPGA SoC Design}}}
+{}{}{}
+{
+    \begin{itemize}
+    \item Developed a comprehensive SoC using Quartus, incorporating a Nios II soft processor, on-chip RAM, and custom IP cores, managed via Avalon memory-mapped interface. Simulated and verified the SoC and emulated it on an Altera FPGA.
+    \item Designed and synthesized custom IP blocks in Verilog for functionalities like image data processing, arithmetic acceleration and VGA output, integrated IP blocks into the system.
+    \item Created software in C to perform system tasks such as performance benchmarking and control over VGA display.
+    \end{itemize}
+}
 \vspace{-0.2cm} 
 
 \section{Work Experience}
