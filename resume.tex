@@ -56,14 +56,14 @@
 \section{Projects}
 
 \cventry
-{\textnormal{\textbf{Feb.-Mar. 2024}}}
-{\textnormal{\textbf{AMBA AXI Stream Header Insertion Module Design and Verification}}}
+{\textnormal{\textbf{Feb.-Apr. 2024}}}
+{\textnormal{\textbf{AMBA AXI Stream Header Insertion IP Design and Verification}}}
 {}{}{}
 {
     \begin{itemize}
-        \item Designed an RTL module using Verilog to insert headers into network data packets. This module transfers data following the AXI Stream protocol, accepting data from two master interfaces. It removes invalid bytes from both input signals based on the keep signals (packing), merges the remaining valid bytes, sends them to a slave interface, and outputs the corresponding keep and last signals.
+        \item Designed an RTL IP using Verilog to insert headers into network data packets. This IP transfers data following the AXI Stream protocol, accepting packets and headers from two input interfaces. It removes invalid bytes from both input data based on the keep signals (packing), merges the remaining valid bytes, sends the processed data to the output ports, and outputs the corresponding keep and last signals.
         \item Used pipelining for data and handshake signals, and equipped skid buffers to handle backpressure, eliminate bubbles in the pipeline, and optimize throughput.
-        \item Verified the module using constrained-random testing in SystemVerilog to ensure data correctness.
+        \item Verified the IP using constrained-random testing in SystemVerilog to ensure data correctness.
     \end{itemize}
 }
 
