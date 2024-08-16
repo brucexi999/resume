@@ -24,9 +24,9 @@
 \vspace{-1.5cm} 
 
 \section{Education}
-\cventry{2021--2024}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
+\cventry{2021--2025}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and DFT, DNN Accelerator, Signals and Systems, Circuit Analysis, Deep Learning
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and DFT, DNN Accelerator, Signals and Systems, Deep Learning
 \end{itemize}
 }
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
@@ -43,8 +43,8 @@
 {
     \begin{itemize}
     \item Conducted electrical and optical testing on surveillance cameras by following a standard workflow, documented results, and managed issues using Confluence and Jira.
-    \item Analyzed test results to identify performance trends and quality issues, showcasing strong analytical skills and meticulous attention to detail, leading to early detection of potential defects and reducing post-production errors.
-    \item Proposed improvements and innovations in existing testing procedures, self-taught Python programming to develop software for test automation and data analysis, utilizing OOP to create modular, reusable scripts. Successfully reduced repetitive manual tasks, increasing team efficiency by automating tests up to 90\%, demonstrating strong problem-solving and debugging skills.
+    \item Analyzed test results to identify performance trends and quality issues, showcasing analytical skills and attention to detail, leading to early detection of potential defects and reducing post-production errors.
+    \item Proposed improvements and innovations in existing testing procedures, self-taught Python programming to develop software for test automation and data analysis, utilizing OOP to create modular, reusable scripts. Successfully reduced repetitive manual tasks, increasing team efficiency by automating tests up to 90\%, demonstrating problem-solving and debugging skills.
     \item Collaborated with electrical and firmware teams to identify and resolve hardware and software issues, showcasing teamwork and communication skills.
     \end{itemize}
 }
@@ -56,14 +56,28 @@
 \section{Projects}
 
 \cventry
+{\textnormal{\textbf{May-Aug. 2024}}}
+{\textnormal{\textbf{SLM Wear-out Monitoring IP Design Verification}}}
+{}{}{}
+{
+    \begin{itemize}
+        \item Created the test plan and feature list for a digital IP based on its specification. Adopted a bottom-up approach to test the RTL design using functional simulation, progressing from the unit level to the IP level.
+        \item Developed modular and reusable testbench components (e.g., drivers, monitors, scoreboards), which were integrated into hierarchical verification environments implemented in SystemVerilog based UVM.
+        \item Wrote UVM test sequences, including constrained random test cases and directed test cases, to thoroughly test the DUT in both normal and corner/error scenarios.
+        \item Debugged failures in simulation waveforms, identified root causes, and collaborated with design engineers to resolve issues in the RTL code.
+    \end{itemize}
+}
+
+
+\cventry
 {\textnormal{\textbf{Feb.-Apr. 2024}}}
-{\textnormal{\textbf{AMBA AXI Stream Header Insertion IP Design and Verification}}}
+{\textnormal{\textbf{AMBA AXI Stream Header Insertion IP Design}}}
 {}{}{}
 {
     \begin{itemize}
         \item Designed an RTL IP using Verilog to insert headers into network data packets. This IP transfers data following the AXI Stream protocol, accepting packets and headers from two input interfaces. It removes invalid bytes from both input data based on the keep signals (packing), merges the remaining valid bytes, sends the processed data to the output ports, and outputs the corresponding keep and last signals.
         \item Used pipelining for data and handshake signals, and equipped skid buffers to handle backpressure, eliminate bubbles in the pipeline, and optimize throughput.
-        \item Verified the IP using constrained-random testing in SystemVerilog to ensure data correctness.
+        %\item Verified the IP using constrained-random testing in SystemVerilog to ensure data correctness.
     \end{itemize}
 }
 
@@ -142,22 +156,22 @@
 %\end{itemize}
 %}
 
-\cventry
-{\textnormal{\textbf{Jan.-Apr. 2022}}}
-{\textnormal{\textbf{FPGA SoC Design}}}
-{}{}{}
-{
-    \begin{itemize}
-    \item Developed a System-on-Chip running at 50 MHz on an Altera FPGA using Quartus IP and Verilog, integrating a Nios II soft processor, on-chip RAM, VGA core, JTAG UART core for host PC communication, and custom IPs. Utilized the Avalon Memory-Mapped Interface for module communication.
-    \item Designed and implemented custom IPs, including counters, state machines, and Avalon interfaces. Conducted simulations of individual IPs and the complete system using ModelSim to verify functionality.
-    \item Created embedded software in C to interact with system modules via memory-mapped addresses, enabling data read/write operations with IPs and performing arithmetic operations on the CPU.
-    \end{itemize}
-}
+%\cventry
+%{\textnormal{\textbf{Jan.-Apr. 2022}}}
+%{\textnormal{\textbf{FPGA SoC Design}}}
+%{}{}{}
+%{
+    %\begin{itemize}
+    %\item Developed a System-on-Chip running at 50 MHz on an Altera FPGA using Quartus IP and Verilog, integrating a Nios II soft processor, on-chip RAM, VGA core, JTAG UART core for host PC communication, and custom IPs. Utilized the Avalon Memory-Mapped Interface for module communication.
+    %\item Designed and implemented custom IPs, including counters, state machines, and Avalon interfaces. Conducted simulations of individual IPs and the complete system using ModelSim to verify functionality.
+    %\item Created embedded software in C to interact with system modules via memory-mapped addresses, enabling data read/write operations with IPs and performing arithmetic operations on the CPU.
+    %\end{itemize}
+%}
 
 \vspace{-0.2cm} 
 
 \section{Skills}
-\cvitem{Hardware}{Verilog, SystemVerilog, Altera FPGA, ModelSim, Quartus, Cadence Virtuoso} 
+\cvitem{Hardware}{Verilog, SystemVerilog, UVM, Altera FPGA, ModelSim, Quartus, Vivado, Cadence Virtuoso} 
 \cvitem{Software}{Python, OOP, C, ARM Assembly, Linux, MATLAB}
 %\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
 %\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
