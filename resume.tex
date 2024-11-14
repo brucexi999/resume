@@ -26,7 +26,7 @@
 \section{Education}
 \cventry{2021--2024}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC}{GPA 4.0}{
     \begin{itemize}
-    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and DFT, DNN Accelerator, Signals and Systems, Deep Learning
+    \item Relevant courses: Digital/Microcomputer System Design, Computer Architecture, VLSI, High-speed Data Link, IC Testing and DFT, DNN Accelerator, Signals and Systems, Deep Learning, Formal Verification
 \end{itemize}
 }
 \cventry{2018--2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours Degree}{
@@ -43,15 +43,15 @@
 \section{Projects}
 
 \cventry
-{\textnormal{\textbf{May-Aug. 2024}}}
+{\textnormal{\textbf{May-Oct. 2024}}}
 {\textnormal{\textbf{SLM Wear-out Monitoring IP Design Verification}}}
 {}{}{}
 {
     \begin{itemize}
         \item Created the test plan and feature list for a digital IP based on its specification. Adopted a bottom-up approach to test the RTL design using functional simulation, progressing from the unit level to the IP level.
-        \item Developed modular and reusable testbench components (e.g., drivers, monitors, scoreboards), which were integrated into hierarchical verification environments implemented in SystemVerilog based UVM.
-        \item Wrote UVM test sequences, including constrained random test cases and directed test cases, to thoroughly test the DUT in both normal and corner/error scenarios.
-        \item Debugged failures in simulation waveforms, identified root causes, and collaborated with design engineers to resolve issues in the RTL code.
+        \item Developed reusable UVM testbench components and hierarchical verification environments. Conducted register verification using UVM RAL. Verified the IP's AMBA APB interface using SVA.
+        \item Defined SystemVerilog cover groups and cover points. Wrote UVM test sequences with coverage-driven constraint random and directed testing techniques, achieved 100\% code and functional coverages.
+        \item Analyzed simulation waveforms, identified root causes of errors, and collaborated with design engineers to resolve issues.
     \end{itemize}
 }
 
@@ -171,7 +171,7 @@
 \vspace{-0.2cm} 
 
 \section{Skills}
-\cvitem{Hardware}{Verilog, SystemVerilog, UVM, Altera FPGA, ModelSim, Quartus, Vivado, Cadence Virtuoso} 
+\cvitem{Hardware}{Verilog, SystemVerilog, UVM, SVA, Altera FPGA, ModelSim, Quartus, Vivado, Cadence Virtuoso} 
 \cvitem{Software}{Python, OOP, C, ARM Assembly, Linux, MATLAB}
 %\cvitem{DevOps Tools}{Confluence, Jira, Git, GitHub}
 %\cvitem{SoC design}{Familiar with concepts of cache coherency, DVFS, DFT, ATPG, P\&R from courses}
