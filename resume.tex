@@ -38,8 +38,8 @@
 \cventry{\atrlprojectdates}{Huawei Canada}{LLM Post-Training \& RL Systems for Kernel Generation}{}{}{
   \begin{itemize}
     \setlength{\itemsep}{4pt}
-    \item \textbf{Improved RL training efficiency}, accelerating subsequent runs by approximately \textbf{20\%}. Implemented partial-rollout scheduling in verl/vLLM to mitigate stragglers, with cross-batch execution, resumable trajectories, and importance-sampling correction across policy updates; integrated the implementation into the team's training stack.
-    \item \textbf{Built performance-profiling tools for a code-generation agent}, integrating msprof diagnostics and hardware-specific optimization guidance into its execution harness. Enabled bottleneck-driven kernel optimization; one matrix-multiplication case achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s). Tools were adopted in subsequent RL training.
+    \item \textbf{Improved RL training efficiency}, accelerating subsequent runs by \textbf{25\%}. Implemented partial-rollout scheduling in verl/vLLM to mitigate stragglers, with cross-batch execution, resumable trajectories, and importance-sampling correction across policy updates.
+    \item \textbf{Built profiler tools for a Triton kernel agent}, integrating performance diagnostics and hardware-specific optimization guidance into its execution harness. Enabled bottleneck-driven kernel optimization; one matrix-multiplication case achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s).
     \item \textbf{Generated and curated synthetic data for supervised fine-tuning (SFT)} through execution-verified, multi-turn trajectory distillation. Filtered examples by correctness and performance, removed unproductive iterations, and compressed reasoning and context to fit sequence-length budgets.
     \item \textbf{Diagnosed numerical and evaluation failures} across the agent workflow. Traced convolution mismatches to the reference's HF32 compute mode versus full FP32, separating baseline precision issues from model capability failures; identified four prompt/tool-interface defects through trajectory analysis and proposed fixes.
     \item \textbf{Designed controlled experiments and ablations} to evaluate agent harnesses and domain-specific guidance. On an 18-task KernelBench matrix-multiplication subset, guidance increased Pass@1 from \textbf{13/18 to 17/18} and Fast@1 from \textbf{0/18 to 9/18} against eager PyTorch, informing training-system integration.
@@ -80,7 +80,7 @@
 \cvitem{Languages \& frameworks}{C/C++, Python, PyTorch, Triton, Ascend C}
 \cvitem{Training systems}{LLM post-training, SFT data generation and curation, trajectory distillation, RL rollout scheduling; verl, vLLM, GRPO}
 \cvitem{Evaluation \& tooling}{Agent tools and harness integration, controlled experiments and ablations, numerical validation, trajectory failure analysis}
-\cvitem{Performance engineering}{Profiling and benchmarking, roofline analysis, numerical correctness, kernel fusion, tiling, compute/memory overlap; msprof}
+\cvitem{Performance engineering}{Profiling and benchmarking, roofline analysis, numerical correctness, kernel fusion, tiling, compute/memory overlap}
 \cvitem{Compiler integration}{LLVM/MLIR, lowering pipelines, IR-level debugging, regression testing}
 \cvitem{Models \& systems}{GDN and Mamba architectures, Ascend NPUs, software/hardware co-design, distributed training and parallelism configuration with MindSpeed-LLM}
 

@@ -52,7 +52,7 @@ Bruce’s documented contributions concern the experiments, tooling, data, and t
 | Controlled harness comparisons | Claude Code and uni-agent produced similar results in the reported comparison, supporting the harness choice for RL integration | Experimental design and engineering trade-offs |
 | CANNBot Skills ablations | On an 18-task KernelBench matrix-multiplication subset, Pass@1 increased from 13/18 to 17/18 and Fast@1 from 0/18 to 9/18 | Controlled benchmarking and evaluation-guided development |
 | Training-trajectory inspection | Identified four prompt, skills, or tool issues and proposed fixes; missing interface instructions were associated with first-attempt failures on 35/102 tasks in one experiment | Failure analysis and interface debugging |
-| msprof integration and guidance | Built and tested profiler tooling and accompanying Triton guidance; one matmul case improved from 2,886 to 2,197 μs, approximately 24% lower latency | Performance diagnostics and research tooling |
+| Profiler integration and guidance | Built and tested profiler tooling and optimization guidance for a Triton kernel agent; one matmul case improved from 2,886 to 2,197 μs, approximately 24% lower latency | Performance diagnostics and research tooling |
 | SFT distillation and data preparation | Used DeepSeek-V4-Flash in phase two; selected trajectories using correctness/performance, removed unproductive turns, and compressed content to fit token budgets | Synthetic data generation, curation, and trajectory distillation |
 | Partial rollout in verl/vLLM | Added cross-batch execution and continuation across training steps, with importance-sampling correction across policy updates; subsequent RL training was reported approximately 20% faster | Rollout scheduling, straggler mitigation, and training efficiency |
 
@@ -169,7 +169,7 @@ The lower frequency of a specialized term does not make the skill less valuable 
 |---|---|---|
 | Partial rollout | RL training efficiency; rollout scheduling; straggler mitigation; resumable execution | Do not rename it fully asynchronous training without confirming its actual semantics |
 | Distilled SFT trajectories | Synthetic data generation and curation; trajectory distillation; LLM post-training | Describe the data work actually owned; do not invent scale or model improvements |
-| msprof tools and guidance | Performance profiling; bottleneck diagnostics; research tooling; agent tool integration | The 24% latency result belongs to one matmul case |
+| Profiler tools and guidance | Performance profiling; bottleneck diagnostics; research tooling; agent tool integration | The 24% latency result belongs to one matmul case |
 | HF32 baseline issue | Numerical debugging; precision validation; evaluation reliability; root-cause analysis | One diagnosis does not establish expertise in designing low-precision training methods |
 | Trajectory inspection | Agent failure analysis; model-trace analysis; interface debugging | Distinguish implemented fixes from proposed fixes |
 | Harness/skills comparisons | Controlled experiments; ablation studies; benchmarking | Keep the 18-task subset and eager-PyTorch baseline explicit |
@@ -217,7 +217,7 @@ These are development directions, not permanent exclusions. The résumé should 
 - Keep the new project prominent and connect its tooling/data work to training outcomes.
 - Give the compiler project a contribution-specific title: **Triton-to-NPU Compiler Debugging (LLVM/MLIR)**.
 - Present the Mamba2 work as **Training Performance Optimization**, supported by the kernel implementation details and measured training impact.
-- Retain relevant technical names such as verl, vLLM, msprof, Triton, Ascend C, and LLVM/MLIR as supporting evidence.
+- Retain relevant technical names such as verl, vLLM, Triton, Ascend C, and LLVM/MLIR as supporting evidence. Refer to the profiling tool generically as a **profiler**, and name the agent precisely as a **Triton kernel agent**.
 - Avoid adding unsupported keywords such as production Kubernetes operations, CUDA expertise, serving-system ownership, reward-model design, or independent authorship of ATRL’s full RL algorithm.
 - Keep benchmark sizes, baselines, precision distinctions, and submission status accurate.
 
