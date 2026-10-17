@@ -1,0 +1,28 @@
+﻿theme,descriptions_mentioning,core_denominator,percent_of_selected_core,employer_boards_mentioning,core_employer_denominator
+Research collaboration,321,506,63.4,53,72
+Python,305,506,60.3,56,72
+Reliability/recovery,291,506,57.5,59,72
+RL/post-training,276,506,54.5,52,72
+Evaluation,274,506,54.2,55,72
+PyTorch,238,506,47.0,52,72
+Debugging,196,506,38.7,42,72
+Throughput/latency,187,506,37.0,51,72
+Open source,178,506,35.2,43,72
+Scheduling/orchestration,173,506,34.2,45,72
+Benchmarking,167,506,33.0,41,72
+C++,157,506,31.0,31,72
+Observability,141,506,27.9,46,72
+Distributed training,138,506,27.3,44,72
+Profiling,128,506,25.3,37,72
+JAX,125,506,24.7,32,72
+CUDA,120,506,23.7,36,72
+Testing/maintainability,120,506,23.7,35,72
+Kubernetes,118,506,23.3,35,72
+Experiment design,109,506,21.5,32,72
+vLLM/SGLang,97,506,19.2,36,72
+Numerical correctness,96,506,19.0,34,72
+Synthetic data/curation,76,506,15.0,31,72
+Triton,63,506,12.5,30,72
+Ray,43,506,8.5,23,72
+Rollouts,42,506,8.3,22,72
+LLVM/MLIR,30,506,5.9,8,72
