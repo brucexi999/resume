@@ -35,14 +35,16 @@
 }
 
 \section{Projects}
-\cventry{\atrlprojectdates}{Huawei Canada}{LLM Post-Training \& RL Systems for Kernel Generation}{}{}{
+\cventry{\atrlprojectdates}{Huawei Canada}{Post-Training for a Triton Kernel Agent}{}{}{
+  Collaborated on supervised fine-tuning (SFT) and reinforcement learning to train an LLM-based agent that translates PyTorch reference operators into correct, efficient Triton kernels on Ascend NPUs through iterative coding, verification, and optimization.
+  \smallskip
   \begin{itemize}
     \setlength{\itemsep}{4pt}
-    \item \textbf{Improved RL training efficiency}, accelerating subsequent runs by \textbf{25\%}. Implemented partial-rollout scheduling in verl/vLLM to mitigate stragglers, with cross-batch execution, resumable trajectories, and importance-sampling correction across policy updates.
-    \item \textbf{Built profiler tools for a Triton kernel agent}, integrating performance diagnostics and hardware-specific optimization guidance into its execution harness. Enabled bottleneck-driven kernel optimization; one matrix-multiplication case achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s).
-    \item \textbf{Generated and curated synthetic data for supervised fine-tuning (SFT)} through execution-verified, multi-turn trajectory distillation. Filtered examples by correctness and performance, removed unproductive iterations, and compressed reasoning and context to fit sequence-length budgets.
-    \item \textbf{Diagnosed numerical and evaluation failures} across the agent workflow. Traced convolution mismatches to the reference's HF32 compute mode versus full FP32, separating baseline precision issues from model capability failures; identified four prompt/tool-interface defects through trajectory analysis and proposed fixes.
-    \item \textbf{Designed controlled experiments and ablations} to evaluate agent harnesses and domain-specific guidance. On an 18-task KernelBench matrix-multiplication subset, guidance increased Pass@1 from \textbf{13/18 to 17/18} and Fast@1 from \textbf{0/18 to 9/18} against eager PyTorch, informing training-system integration.
+    \item Distilled and curated multi-turn kernel-development trajectories for \textbf{SFT}, filtering examples by correctness and measured speedup; removed unproductive iterations and compressed reasoning to fit the training token budget.
+    \item Compared agent harnesses and hardware-specific guidance through controlled ablations to inform the RL training setup. On 18 KernelBench matrix-multiplication tasks, guidance increased Pass@1 from \textbf{13/18 to 17/18} and Fast@1 from \textbf{0/18 to 9/18} against eager PyTorch.
+    \item Added \textbf{profiler feedback} and optimization guidance to the agent's toolset for RL training, enabling it to diagnose hardware bottlenecks and refine kernels. One matrix-multiplication case achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s).
+    \item Improved the validity of execution feedback by tracing convolution failures to the reference's HF32 compute mode versus full FP32. Inspected training trajectories to identify four prompt/tool-interface issues and propose fixes.
+    \item \textbf{Accelerated the agent's RL training by 25\%} with partial rollout in verl/vLLM, reducing straggler waiting through cross-batch scheduling, resumable trajectories, and importance-sampling correction across policy updates.
   \end{itemize}
   \smallskip
   \textit{Project outputs: ATRL (ICLR 2027 submission), a \href{https://mp.weixin.qq.com/s/jdQQPb-w--AJjIAnCh63QQ}{Huawei technical report}, and a contribution to verl-ascend-recipe.}

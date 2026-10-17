@@ -214,7 +214,8 @@ These are development directions, not permanent exclusions. The résumé should 
 
 - Preserve the official Huawei title and employment dates.
 - Use a summary centered on **ML training systems, performance optimization, and evaluation reliability**.
-- Keep the new project prominent and connect its tooling/data work to training outcomes.
+- Name the new project **Post-Training for a Triton Kernel Agent**. Open with its purpose: SFT and reinforcement learning for an LLM-based agent that implements, verifies, and optimizes Triton kernels from PyTorch references on Ascend NPUs.
+- Organize the contributions around that training workflow: SFT trajectories, agent/harness selection, profiler feedback, valid execution feedback, and efficient RL training. Each bullet should explain its role in the project; market terminology should support that narrative.
 - Give the compiler project a contribution-specific title: **Triton-to-NPU Compiler Debugging (LLVM/MLIR)**.
 - Present the Mamba2 work as **Training Performance Optimization**, supported by the kernel implementation details and measured training impact.
 - Retain relevant technical names such as verl, vLLM, Triton, Ascend C, and LLVM/MLIR as supporting evidence. Refer to the profiling tool generically as a **profiler**, and name the agent precisely as a **Triton kernel agent**.
