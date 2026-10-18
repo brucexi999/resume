@@ -1,10 +1,9 @@
-\documentclass[12pt,a4paper,sans]{moderncv}
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 \usepackage{lmodern}
-\usepackage[top=1.4cm,bottom=1.6cm,left=1.6cm,right=1.6cm]{geometry}
-\linespread{1.08}
+\usepackage[top=1.2cm,bottom=1.4cm,left=1.6cm,right=1.6cm]{geometry}
 \setlength{\footskip}{18pt}
 \renewcommand*{\sectionfont}{\fontsize{14}{17}\bfseries\upshape}
 
@@ -15,75 +14,62 @@
 \social[linkedin]{bruce-shidi-xi}
 \social[github]{brucexi999}
 
-% The project completion month is confirmed; no exact start month was supplied.
-\newcommand{\atrlprojectdates}{Completed Oct. 2026}
+% Project dates supplied in the current resume draft.
+\newcommand{\atrlprojectdates}{May 2026 -- Oct. 2026}
+\newcommand{\projectheading}[2]{%
+  \par\addvspace{2.5pt}\noindent{\small\bfseries #1}\hfill{\small\color{color2}#2}\par\nobreak\vspace{2pt}}
+\newenvironment{projectgroup}{%
+  \begin{list}{}{\setlength{\leftmargin}{4mm}\setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}\setlength{\itemsep}{0pt}}\item[]
+}{\end{list}}
+\newenvironment{resumeitems}{%
+  \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}%
+}{\end{itemize}}
 
 \begin{document}
 \makecvtitle
-\vspace{-1.0cm}
-
-\cvitem{}{Software engineer focused on ML training systems, performance optimization, and evaluation reliability. Hands-on experience with LLM post-training, accelerator kernels, and debugging across numerical and compiler layers.}
+\vspace{-1.3cm}
 
 \section{Experience}
-\cventry{Jan. 2025 -- Present}{SW/HW Co-Design Engineer}{Huawei Canada}{Markham, ON, Canada}{}{
-  \begin{itemize}
-    \setlength{\itemsep}{4pt}
-    \item Build and optimize ML training and inference software on Ascend NPUs, spanning LLM post-training workflows, PyTorch integration, and custom Ascend C/Triton kernels.
-    \item Use profiling, benchmarking, roofline analysis, and numerical validation to diagnose performance and correctness issues; contribute to LLVM/MLIR compiler integration and software/hardware co-design for GDN and Mamba models.
-    \item Bring up Qwen and DeepSeek models on MindSpeed-LLM; tune micro-batch sizes and 3D parallelism to address memory and throughput bottlenecks.
-  \end{itemize}
-}
+\cventry{Jan. 2025 -- Present}{SW/HW Co-Design Engineer}{\textcolor{black}{\large Huawei Canada}}{Markham, ON, Canada}{}{}
+Trace ML training failures and performance bottlenecks to their root causes across agent workflows, runtimes, kernels, and compiler IR; implement fixes and validate their impact on Ascend NPUs.
 
-\section{Projects}
-\cventry{\atrlprojectdates}{Huawei Canada}{Post-Training for a Triton Kernel Agent}{}{}{
-  Collaborated on supervised fine-tuning (SFT) and reinforcement learning to train an LLM-based agent that translates PyTorch reference operators into correct, efficient Triton kernels on Ascend NPUs through iterative coding, verification, and optimization.
-  \smallskip
-  \begin{itemize}
-    \setlength{\itemsep}{4pt}
-    \item Distilled and curated multi-turn kernel-development trajectories for \textbf{SFT}, filtering examples by correctness and measured speedup; removed unproductive iterations and compressed reasoning to fit the training token budget.
-    \item Compared agent harnesses and hardware-specific guidance through controlled ablations to inform the RL training setup. On 18 KernelBench matrix-multiplication tasks, guidance increased Pass@1 from \textbf{13/18 to 17/18} and Fast@1 from \textbf{0/18 to 9/18} against eager PyTorch.
-    \item Added \textbf{profiler feedback} and optimization guidance to the agent's toolset for RL training, enabling it to diagnose hardware bottlenecks and refine kernels. One matrix-multiplication case achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s).
-    \item Improved the validity of execution feedback by tracing convolution failures to the reference's HF32 compute mode versus full FP32. Inspected training trajectories to identify four prompt/tool-interface issues and propose fixes.
-    \item \textbf{Accelerated the agent's RL training by 25\%} with partial rollout in verl/vLLM, reducing straggler waiting through cross-batch scheduling, resumable trajectories, and importance-sampling correction across policy updates.
-  \end{itemize}
-  \smallskip
-  \textit{Project outputs: ATRL (ICLR 2027 submission), a \href{https://mp.weixin.qq.com/s/jdQQPb-w--AJjIAnCh63QQ}{Huawei technical report}, and a contribution to verl-ascend-recipe.}
-}
+\begin{projectgroup}
+\projectheading{Post-Training for a Triton Kernel Agent}{\atrlprojectdates}
+ATRL (ICLR 2027 submission) trains an agent to turn PyTorch operators into optimized Triton kernels on Ascend NPUs. The team built a custom Triton kernel agent harness and introduced compaction-aware RL. Compared with untuned Qwen3.6-35B, ATRL raised KernelBench L1 Pass@1 from \textbf{20\% to 73\%} and Fast@1 (correct kernels at least as fast as eager PyTorch) from \textbf{8\% to 23\%}. Recipe: \href{https://github.com/verl-project/verl-ascend-recipe/pull/49}{verl-ascend-recipe PR \#49}.
+\begin{resumeitems}
+  \item Implemented partial rollout in verl/vLLM to reduce waiting on long-running agent trajectories, accelerating RL training by \textbf{25\%}; added cross-batch scheduling, resumable execution, and importance-sampling correction across policy updates.
+  \item Distilled and curated execution-verified SFT trajectories; filtered examples by correctness and speedup, pruned unproductive turns, and compressed reasoning to fit the training token budget.
+  \item Manually inspected agent trajectories turn by turn to debug the training system, identifying four issues across prompts, skills, and tool interfaces and proposing fixes.
+  \item Integrated a profiler and Ascend-specific optimization skills into the Triton kernel agent's harness for RL training; one agent-generated matmul implementation achieved \textbf{24\% lower latency} (2,886 to 2,197~$\mu$s).
+  \item Diagnosed convolution verification failures caused by HF32 reference execution instead of full FP32, correcting an evaluation issue initially attributed to the agent's kernel-generation ability.
+  \item Ran controlled ablations of agent harnesses and Ascend-specific skills to inform the RL training setup.
+\end{resumeitems}
 
-\newpage
+\projectheading{Triton-to-NPU Compiler Debugging (LLVM/MLIR)}{Feb. 2026 -- Apr. 2026}
+MLIR-based compiler middle-end that lowers Triton programs to LLVM IR for Ascend NPUs.
+\begin{resumeitems}
+  \item Resolved silent data corruption in Triton-to-NPU compilation by tracing failures through \textbf{600+ compiler pass dumps} to incorrect hardware-predicate materialization in MLIR-to-LLVM lowering.
+  \item Used intermediate-value logging and SSA manipulation to isolate corrupted vector lanes; implemented the fix and regression tests (\href{https://gitcode.com/Ascend/AscendNPU-IR-Dev/merge_requests/712\#note_bde642664e6acab8079c724d11121a7cec083379}{AscendNPU-IR MR \#712}).
+\end{resumeitems}
 
-\section{Projects (continued)}
-\cventry{Feb. 2026 -- Apr. 2026}{Huawei Canada}{Triton-to-NPU Compiler Debugging (LLVM/MLIR)}{}{}{
-  \begin{itemize}
-    \setlength{\itemsep}{4pt}
-    \item \textbf{Resolved silent data corruption} in Triton-to-NPU compilation by tracing failures through \textbf{600+ compiler pass dumps} to incorrect hardware-predicate materialization in MLIR-to-LLVM lowering.
-    \item Used intermediate-value logging and SSA manipulation to isolate corrupted vector lanes; implemented the fix and regression tests in \href{https://gitcode.com/Ascend/AscendNPU-IR-Dev}{AscendNPU-IR}.
-  \end{itemize}
-}
+\projectheading{Training Performance Optimization for a Mamba2 Model}{Mar. 2025 -- Dec. 2025}
+Custom Ascend NPU kernels to reduce memory traffic during pre-training of a Mamba2-based model.
+\begin{resumeitems}
+  \item Integrated fused Ascend C kernels into PyTorch via Pybind; one kernel achieved \textbf{12$\times$ forward and 15$\times$ backward speedups}, reducing training-step time by \textbf{4.6\%} and improving MFU by \textbf{1.5\%}.
+  \item Optimized tiling, workload partitioning, memory access, and compute/data-transfer overlap; validated numerical correctness and diagnosed synchronization faults and pipeline bubbles with Ascend's profiler, debugger, and simulator.
+\end{resumeitems}
 
-\cventry{Mar. 2025 -- Dec. 2025}{Huawei Canada}{Training Performance Optimization for a Mamba2 Model}{}{}{
-  \begin{itemize}
-    \setlength{\itemsep}{4pt}
-    \item Developed Ascend C kernels and integrated them into PyTorch via Pybind. Fused memory-bound elementwise operators to increase arithmetic intensity; a kernel achieved \textbf{12$\times$ forward and 15$\times$ backward speedups}, reducing overall training-step time by \textbf{4.6\%} and improving MFU by \textbf{1.5\%}.
-    \item Optimized workload partitioning, tiling, L2 cache reuse, and memory-access patterns; used ping-pong buffering to overlap computation and data transfers within on-chip buffer limits.
-    \item Validated numerical correctness and analyzed performance using Ascend's debugger, profiler, and simulator; diagnosed out-of-memory errors, synchronization faults, and pipeline bubbles.
-  \end{itemize}
-}
+\end{projectgroup}
 
 \section{Education}
-\cventry{2021 -- 2024}{Master of Engineering in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC, Canada}{GPA: 4.0}{
-  Relevant courses: Computer Architecture, VLSI, ML Accelerator, Deep Learning
-}
-\cventry{2018 -- 2021}{Bachelor of Engineering in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours}{
-  Dean's List for three consecutive years (2018--2021)
-}
+\cventry{2021 -- 2024}{M.Eng. in Electrical and Computer Engineering}{The University of British Columbia}{Vancouver, BC, Canada}{GPA: 4.0}{}
+\cventry{2018 -- 2021}{B.Eng. in Materials Science and Engineering}{Imperial College London}{London, UK}{First-Class Honours}{Dean's List for three consecutive years (2018--2021)}
 
 \section{Skills}
-\cvitem{Languages \& frameworks}{C/C++, Python, PyTorch, Triton, Ascend C}
-\cvitem{Training systems}{LLM post-training, SFT data generation and curation, trajectory distillation, RL rollout scheduling; verl, vLLM, GRPO}
-\cvitem{Evaluation \& tooling}{Agent tools and harness integration, controlled experiments and ablations, numerical validation, trajectory failure analysis}
-\cvitem{Performance engineering}{Profiling and benchmarking, roofline analysis, numerical correctness, kernel fusion, tiling, compute/memory overlap}
-\cvitem{Compiler integration}{LLVM/MLIR, lowering pipelines, IR-level debugging, regression testing}
-\cvitem{Models \& systems}{GDN and Mamba architectures, Ascend NPUs, software/hardware co-design, distributed training and parallelism configuration with MindSpeed-LLM}
+\cvitem{Languages \& frameworks}{Python, C/C++, PyTorch, Triton, Ascend C}
+\cvitem{ML systems}{verl, vLLM, MindSpeed-LLM; SFT/RL, GRPO, rollout scheduling, training parallelism}
+\cvitem{Performance}{Profiling, benchmarking, roofline analysis, numerical validation; LLVM/MLIR debugging}
 
 \end{document}
